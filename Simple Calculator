@@ -1,0 +1,36 @@
+def sum(x,y):
+    return x + y
+def difference(x,y):
+    return x - y
+def product(x, y):
+    return x * y
+def division(x, y):
+    if y == 0:
+        return ("Error! Division by zero")
+    return x / y
+def calculator():
+    print("Choose any of the following:")
+    print("1. Addition")
+    print("2. Subtraction")
+    print("3. Multiplication")
+    print("4. Division")
+    choice = input("Operation to be done(1 or 2 or 3 or 4): ")
+    if choice in ['1', '2', '3', '4']:
+        try:
+            a = float(input("Enter 1st number: "))
+            b = float(input("Enter 2nd number: "))
+        except ValueError:
+            print("Please enter numbers.")
+            return
+        if choice == '1':
+            print(f"{a} + {b} = {sum(a,b)}")
+        elif choice == '2':
+            print(f"{a} - {b} = {difference(a,b)}")
+        elif choice == '3':
+            print(f"{a} * {b} = {product(a,b)}")
+        elif choice == '4':
+            print(f"{a} / {b} = {division(a,b)}")
+    else:
+        print("Invalid choice")
+calculator()
+
